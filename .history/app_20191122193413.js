@@ -120,15 +120,15 @@ const data = [
     const btn3 = document.createElement('button')
     btn3.className= 'price'
     btn3.id = "butt3"
-    btn3.innerText = "Sort by Price"
+    btn3.innerText = "Sort by price"
     const btn4 = document.createElement('button')
     btn4.className= 'price'
     btn4.id = "butt4"
-    btn4.innerText = "Sort by Color"
+    btn4.innerText = "Sort by color"
     container.append(btn1, btn2, btn3, btn4)
 
     function sort1(){
-      data.sort((a, b) => (a.topic > b.topic) ? 1 : -1)
+        data.sort((a, b) => (a.topic > b.topic) ? 1 : -1)
     }
     function sort2(){
       data.sort((a, b) => (a.title > b.title) ? 1 : -1)
@@ -136,13 +136,11 @@ const data = [
     function sort3(){
       data.sort((a, b) => (a.price > b.price) ? 1 : -1)
     }
-    function sort4(){
-      data.sort((a, b) => (a.color > b.color) ? 1 : -1)
-    }
+
     btn1.addEventListener('click', function(event) {
-      sort1();
-      tilers.innerHTML = "";
-      looop();
+        sort1();
+        tilers.innerHTML = "";
+        looop();
     })
     btn2.addEventListener('click', function(event) {
       sort2();
@@ -151,11 +149,6 @@ const data = [
     })
     btn3.addEventListener('click', function(event) {
       sort3();
-      tilers.innerHTML = "";
-      looop();
-    })
-    btn4.addEventListener('click', function(event) {
-      sort4();
       tilers.innerHTML = "";
       looop();
     })

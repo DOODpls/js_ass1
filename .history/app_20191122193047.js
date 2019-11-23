@@ -110,55 +110,33 @@ const data = [
     // tried to do sort, but i suck
     const container = document.querySelector('body section .container')
     const btn1 = document.createElement('button')
-    btn1.className= 'topic'
+    btn1.className= 'buy-button'
     btn1.id = "butt1"
     btn1.innerText = "Sort by Topic"
     const btn2 = document.createElement('button')
-    btn2.className= 'bytitle'
+    btn2.className= 'buy-button'
     btn2.id = "butt2"
-    btn2.innerText = "Sort by Title"
-    const btn3 = document.createElement('button')
-    btn3.className= 'price'
-    btn3.id = "butt3"
-    btn3.innerText = "Sort by Price"
-    const btn4 = document.createElement('button')
-    btn4.className= 'price'
-    btn4.id = "butt4"
-    btn4.innerText = "Sort by Color"
-    container.append(btn1, btn2, btn3, btn4)
+    btn2.innerText = "Sort by Topic"
+    container.append(btn1, btn2)
 
     function sort1(){
-      data.sort((a, b) => (a.topic > b.topic) ? 1 : -1)
+        data.sort((a, b) => (a.topic > b.topic) ? 1 : -1)
     }
     function sort2(){
       data.sort((a, b) => (a.title > b.title) ? 1 : -1)
     }
-    function sort3(){
-      data.sort((a, b) => (a.price > b.price) ? 1 : -1)
-    }
-    function sort4(){
-      data.sort((a, b) => (a.color > b.color) ? 1 : -1)
-    }
+
     btn1.addEventListener('click', function(event) {
-      sort1();
-      tilers.innerHTML = "";
-      looop();
+        sort1();
+        tilers.innerHTML = "";
+        looop();
     })
     btn2.addEventListener('click', function(event) {
       sort2();
       tilers.innerHTML = "";
       looop();
-    })
-    btn3.addEventListener('click', function(event) {
-      sort3();
-      tilers.innerHTML = "";
-      looop();
-    })
-    btn4.addEventListener('click', function(event) {
-      sort4();
-      tilers.innerHTML = "";
-      looop();
-    })
+  })
+    
     //this one also works lolllll
     // data.forEach(function(items)
     // {

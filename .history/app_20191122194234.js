@@ -125,7 +125,11 @@ const data = [
     btn4.className= 'price'
     btn4.id = "butt4"
     btn4.innerText = "Sort by Color"
-    container.append(btn1, btn2, btn3, btn4)
+    const btn5 = document.createElement('button')
+    btn5.className= 'price'
+    btn5.id = "butt5"
+    btn5.innerText = "Return to Original"
+    container.append(btn1, btn2, btn3, btn4, btn5)
 
     function sort1(){
       data.sort((a, b) => (a.topic > b.topic) ? 1 : -1)
@@ -157,6 +161,11 @@ const data = [
     btn4.addEventListener('click', function(event) {
       sort4();
       tilers.innerHTML = "";
+      looop();
+    })
+    btn5.addEventListener('click', function(event) {
+      tilers.innerHTML = "";
+      
       looop();
     })
     //this one also works lolllll

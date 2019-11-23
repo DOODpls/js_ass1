@@ -46,7 +46,21 @@ const data = [
 
 // Instructions
 // Take the data above and display it as tiles on the page
+        //tried to do sort, but i suck
+        // const button1 = document.querySelector('body section .container')
+        // const btn1 = document.createElement('button')
+        // btn1.className= 'buy-button'
+        // btn1.id = "butt1"
+        // button1.appendChild(btn1)
+
+        // function sort1(){
+        //     data.sort((a, b) => (a.topic > b.topic) ? 1 : -1)
+        // }
         
+        // const button2 = document.querySelector('#butt1')
+        // button2.addEventListener('click', function(event) {
+        //     sort1()
+        // })
 
     // for(i=0; i<data.length; i++){
     //     let heig
@@ -80,85 +94,42 @@ const data = [
     //     btr2.className= 'buy-button'
     //     btn1.appendChild(btr2)
     // }
-    const tilers = document.querySelector('#content')
-    function looop(){
-      data.forEach(function(item)
+
+    data.forEach(function(item)
     {
+      let heig
+        if(i % 2 == 0){
+            heig = '500px'
+        }
+
+        const tilers = document.querySelector('#content')
         const divr = document.createElement('div')
-        divr.className = 'card'
-        divr.style.backgroundColor = item.color
+        divr.className= 'card'
+        divr.style.backgroundColor = item[i].color
+        divr.style.flex = heig
+        divr.id = 'divtile'+ i
         tilers.appendChild(divr)
 
+        const p1 = document.querySelector('#divtile'+i)
         const pr1 = document.createElement('p')
-        pr1.textContent = item.topic
+        pr1.textContent = item[i].topic
         pr1.className= 'topic'
-        divr.appendChild(pr1)
+        p1.appendChild(pr1)
 
+        const p2 = document.querySelector('#divtile'+i)
         const pr2 = document.createElement('p')
-        pr2.textContent = item.title
+        pr2.textContent = item[i].title
         pr2.className= 'title'
-        divr.appendChild(pr2)
+        p2.appendChild(pr2)
 
+        const btn1 = document.querySelector('#divtile'+i)
         const btr2 = document.createElement('button')
-        btr2.textContent = item.price
+        btr2.textContent = item[i].price
         btr2.className= 'buy-button'
-        divr.appendChild(btr2)
+        btn1.appendChild(btr2)
     })
-    }
-    looop();
+        
     
-    // tried to do sort, but i suck
-    const container = document.querySelector('body section .container')
-    const btn1 = document.createElement('button')
-    btn1.className= 'topic'
-    btn1.id = "butt1"
-    btn1.innerText = "Sort by Topic"
-    const btn2 = document.createElement('button')
-    btn2.className= 'bytitle'
-    btn2.id = "butt2"
-    btn2.innerText = "Sort by Title"
-    const btn3 = document.createElement('button')
-    btn3.className= 'price'
-    btn3.id = "butt3"
-    btn3.innerText = "Sort by Price"
-    const btn4 = document.createElement('button')
-    btn4.className= 'price'
-    btn4.id = "butt4"
-    btn4.innerText = "Sort by Color"
-    container.append(btn1, btn2, btn3, btn4)
-
-    function sort1(){
-      data.sort((a, b) => (a.topic > b.topic) ? 1 : -1)
-    }
-    function sort2(){
-      data.sort((a, b) => (a.title > b.title) ? 1 : -1)
-    }
-    function sort3(){
-      data.sort((a, b) => (a.price > b.price) ? 1 : -1)
-    }
-    function sort4(){
-      data.sort((a, b) => (a.color > b.color) ? 1 : -1)
-    }
-    btn1.addEventListener('click', function(event) {
-      sort1();
-      tilers.innerHTML = "";
-      looop();
-    })
-    btn2.addEventListener('click', function(event) {
-      sort2();
-      tilers.innerHTML = "";
-      looop();
-    })
-    btn3.addEventListener('click', function(event) {
-      sort3();
-      tilers.innerHTML = "";
-      looop();
-    })
-    btn4.addEventListener('click', function(event) {
-      sort4();
-      tilers.innerHTML = "";
-      looop();
-    })
     //this one also works lolllll
     // data.forEach(function(items)
     // {
